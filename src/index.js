@@ -11,13 +11,13 @@ async function getWeather() {
     }
   );
   answer = await response.json();
-  console.log(answer);
   return answer;
 }
-function processWeather(jsonObject) {
-  const currentDay = jsonObject.forecast.forecastday[0];
+async function processWeather(jsonObject) {
+  const mainObject = await jsonObject();
+  const currentDay = mainObject.forecast.forecastday[0];
   const dayObject = {
-    location: jsonObject.loction.name,
+    location: mainObject.location.name,
     firstHour: {
       temp: currentDay.hour[7].temp_c,
       windspeed: currentDay.hour[7].wind_kph,
@@ -47,4 +47,4 @@ function processWeather(jsonObject) {
     maxWind: currentDay.day.maxwind_kph,
   };
 }
-getWeather();
+processWeather(getWeather);
