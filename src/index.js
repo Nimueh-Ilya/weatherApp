@@ -1,10 +1,10 @@
 const searchButton = document.querySelector("button");
 const userInputElement = document.querySelector(".user-input");
+const apiKeyParameter = "?key=80f5580617a24725a91193618241401";
+const requestURL = "http://api.weatherapi.com/v1";
+const forecastWeatherURL = "/forecast.json";
 let userInput;
 async function getWeather() {
-  const apiKeyParameter = "?key=80f5580617a24725a91193618241401";
-  const requestURL = "http://api.weatherapi.com/v1";
-  const forecastWeatherURL = "/forecast.json";
   response = await fetch(
     `${requestURL + forecastWeatherURL + apiKeyParameter}&q=${userInput}`,
     {
@@ -53,7 +53,7 @@ async function processWeather(jsonObject) {
 }
 searchButton.addEventListener("click", () => {
   const userInput = userInputElement.value;
-  console.log(userInput);
+
   if (!userInput) {
     return;
   } else {
@@ -63,3 +63,4 @@ searchButton.addEventListener("click", () => {
     })();
   }
 });
+function renderWeather() {}
