@@ -60,7 +60,35 @@ searchButton.addEventListener("click", () => {
     (async () => {
       const result = await processWeather(getWeather);
       console.log(result);
+      renderWeather();
+      function renderWeather() {
+        const cityName = document.querySelector(".city-name");
+        const averageIcon = document.querySelector(".icon");
+        const averageWind = document.querySelector(".average-wind");
+        const averageTemperature = document.querySelector(".average-temp");
+        const averageHumid = document.querySelector(".average-humid");
+        const firstHourIcon = document.querySelector(".first-hour-icon");
+        const firstHourTemp = document.querySelector(".first-hour-temp");
+        const secondHourIcon = document.querySelector(".second-hour-icon");
+        const secondHourTemp = document.querySelector(".second-hour-temp");
+        const thirdHourIcon = document.querySelector(".third-hour-icon");
+        const thirdHourTemp = document.querySelector(".third-hour-temp");
+        const fourthHourIcon = document.querySelector(".fourth-hour-icon");
+        const fourthHourTemp = document.querySelector(".fourth-hour-temp");
+        cityName.innerText = `${result.location}`;
+        // averageIcon.innerText = `${result.}`;
+        averageWind.innerText = `${result.maxWind}`;
+        averageTemperature.innerText = `${result.averageTemp}`;
+        averageHumid.innerText = `${result.averageHumidity}`;
+        // firstHourIcon.innerText = `${result.}`;
+        firstHourTemp.innerText = `${result.firstHour.temp}`;
+        // secondHourIcon.innerText = `${result.}`;
+        secondHourTemp.innerText = `${result.secondHour.temp}`;
+        // thirdHourIcon.innerText = `${result.}`;
+        thirdHourTemp.innerText = `${result.thirdHour.temp}`;
+        // fourthHourIcon.innerText = `${result.}`;
+        fourthHourTemp.innerText = `${result.fourthHour.temp}`;
+      }
     })();
   }
 });
-function renderWeather() {}
