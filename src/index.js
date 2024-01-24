@@ -18,11 +18,13 @@ async function processWeather(jsonObject) {
   userInput = userInputElement.value;
   const mainObject = await jsonObject();
   const currentDay = mainObject.forecast.forecastday[0];
+  console.log(currentDay.day.condition.icon);
   const dayObject = {
     location: mainObject.location.name,
     averageTemp: currentDay.day.avgtemp_c,
     averageHumidity: currentDay.day.avghumidity,
     maxWind: currentDay.day.maxwind_kph,
+    condition: currentDay.day.condition.icon,
     firstHour: {
       temp: currentDay.hour[7].temp_c,
       windspeed: currentDay.hour[7].wind_kph,
@@ -75,19 +77,20 @@ searchButton.addEventListener("click", () => {
         const thirdHourTemp = document.querySelector(".third-hour-temp");
         const fourthHourIcon = document.querySelector(".fourth-hour-icon");
         const fourthHourTemp = document.querySelector(".fourth-hour-temp");
+        console.log(result.condition);
         cityName.innerText = `${result.location}`;
-        // averageIcon.innerText = `${result.}`;
-        averageWind.innerText = `${result.maxWind}`;
-        averageTemperature.innerText = `${result.averageTemp}`;
-        averageHumid.innerText = `${result.averageHumidity}`;
+        averageIcon.src = `${result.condition}`;
+        averageWind.innerText = `${result.maxWind} KPH`;
+        averageTemperature.innerText = `${result.averageTemp} °C`;
+        averageHumid.innerText = `${result.averageHumidity} %`;
         // firstHourIcon.innerText = `${result.}`;
-        firstHourTemp.innerText = `${result.firstHour.temp}`;
+        firstHourTemp.innerText = `${result.firstHour.temp} °C`;
         // secondHourIcon.innerText = `${result.}`;
-        secondHourTemp.innerText = `${result.secondHour.temp}`;
+        secondHourTemp.innerText = `${result.secondHour.temp} °C`;
         // thirdHourIcon.innerText = `${result.}`;
-        thirdHourTemp.innerText = `${result.thirdHour.temp}`;
+        thirdHourTemp.innerText = `${result.thirdHour.temp} °C`;
         // fourthHourIcon.innerText = `${result.}`;
-        fourthHourTemp.innerText = `${result.fourthHour.temp}`;
+        fourthHourTemp.innerText = `${result.fourthHour.temp} °C`;
       }
     })();
   }
