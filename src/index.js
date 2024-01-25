@@ -80,16 +80,16 @@ searchButton.addEventListener("click", () => {
         console.log(result.condition);
         cityName.innerText = `${result.location}`;
         averageIcon.src = `${result.condition}`;
-        averageWind.innerText = `${result.maxWind} KPH`;
-        averageTemperature.innerText = `${result.averageTemp} °C`;
-        averageHumid.innerText = `${result.averageHumidity} %`;
-        // firstHourIcon.innerText = `${result.}`;
+        averageWind.innerText = `🍃: ${result.maxWind} KPH`;
+        averageTemperature.innerText = `🌡️: ${result.averageTemp} °C`;
+        averageHumid.innerText = `💧 :${result.averageHumidity} %`;
+        firstHourIcon.src = `${result.firstHour.condition_icon}`;
         firstHourTemp.innerText = `${result.firstHour.temp} °C`;
-        // secondHourIcon.innerText = `${result.}`;
+        secondHourIcon.src = `${result.secondHour.condition_icon}`;
         secondHourTemp.innerText = `${result.secondHour.temp} °C`;
-        // thirdHourIcon.innerText = `${result.}`;
+        thirdHourIcon.src = `${result.thirdHour.condition_icon}`;
         thirdHourTemp.innerText = `${result.thirdHour.temp} °C`;
-        // fourthHourIcon.innerText = `${result.}`;
+        fourthHourIcon.src = `${result.fourthHour.condition_icon}`;
         fourthHourTemp.innerText = `${result.fourthHour.temp} °C`;
       }
     })();

@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:200");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   color: white;
+  font-family: "Raleway";
 }
 body {
   height: 100vh;
@@ -17,7 +19,28 @@ body {
 .input-container {
   display: flex;
   justify-content: right;
+  align-items: center;
   gap: 20px;
+  padding-right: 40px;
+}
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+}
+.search-button > img {
+  height: 100%;
+  width: auto;
+}
+.user-input {
+  margin: 30px 20px;
+  width: 20em;
+  border-radius: 8px;
+  border-style: solid;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
 }
 .weather-container {
   display: grid;
@@ -37,18 +60,14 @@ body {
   justify-content: center;
   align-items: center;
 }
-.averages {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.averages > div {
+.average-info > * {
   flex-grow: 1;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   font-weight: bolder;
   font-size: 50px;
+  text-wrap: wrap;
 }
 
 .hourly-averages {
@@ -61,4 +80,13 @@ body {
 }
 .hourly-averages > div > div {
   width: 100%;
+}
+.hour-info,
+.hour-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 20px;
 }
