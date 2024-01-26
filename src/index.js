@@ -65,6 +65,7 @@ searchButton.addEventListener("click", () => {
       function renderWeather() {
         const cityName = document.querySelector(".city-name");
         const averageIcon = document.querySelector(".icon");
+        const averageIcon2 = document.querySelector(".iconTwo");
         const averageWind = document.querySelector(".average-wind");
         const averageTemperature = document.querySelector(".average-temp");
         const averageHumid = document.querySelector(".average-humid");
@@ -81,6 +82,7 @@ searchButton.addEventListener("click", () => {
         console.log(result.condition);
         cityName.innerText = `${result.location}`;
         averageIcon.src = `${result.condition}`;
+        averageIcon2.src = `${result.condition}`;
         averageWind.innerText = `🍃: ${result.maxWind} KPH`;
         averageTemperature.innerText = `🌡️: ${result.averageTemp} °C`;
         averageHumid.innerText = `💧 :${result.averageHumidity} %`;
