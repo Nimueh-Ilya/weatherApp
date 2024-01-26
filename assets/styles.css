@@ -61,7 +61,13 @@ body {
   justify-content: center;
   align-items: center;
 }
-.average-info > * {
+.name-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.average-info > div {
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -69,6 +75,10 @@ body {
   font-weight: bolder;
   font-size: 50px;
   text-wrap: wrap;
+}
+.average-info > img {
+  height: auto;
+  width: auto;
 }
 
 .hourly-averages {
