@@ -61,7 +61,6 @@ searchButton.addEventListener("click", () => {
   } else {
     (async () => {
       const result = await processWeather(getWeather);
-      console.log(result);
       renderWeather();
       function renderWeather() {
         const cityName = document.querySelector(".city-name");
@@ -77,6 +76,8 @@ searchButton.addEventListener("click", () => {
         const thirdHourTemp = document.querySelector(".third-hour-temp");
         const fourthHourIcon = document.querySelector(".fourth-hour-icon");
         const fourthHourTemp = document.querySelector(".fourth-hour-temp");
+        const hourlyAverages = document.querySelector(".hourly-averages");
+        hourlyAverages.classList.remove("hidden");
         console.log(result.condition);
         cityName.innerText = `${result.location}`;
         averageIcon.src = `${result.condition}`;
