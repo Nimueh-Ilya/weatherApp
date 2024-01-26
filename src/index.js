@@ -1,7 +1,7 @@
 const searchButton = document.querySelector("button");
 const userInputElement = document.querySelector(".user-input");
 const apiKeyParameter = "?key=80f5580617a24725a91193618241401";
-const requestURL = "http://api.weatherapi.com/v1";
+const requestURL = "https://api.weatherapi.com/v1";
 const forecastWeatherURL = "/forecast.json";
 let userInput;
 async function getWeather() {
